@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F6FC"
+    android:fillViewport="true"
+    android:clipToPadding="false">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="28dp">
+
+        <!-- Gradient Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="24dp"
+            android:background="@drawable/bg_header">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🌐"
+                android:textSize="34sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HTTP Web Service"
+                android:textSize="27sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Connect • Fetch • Display"
+                android:textSize="14sp"
+                android:textColor="#E3F2FD"
+                android:gravity="center"
+                android:layout_marginTop="6dp" />
+
+        </LinearLayout>
+
+        <!-- Main Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:layout_marginTop="22dp">
+
+            <!-- Request Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="@drawable/bg_card"
+                android:elevation="3dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="API REQUEST"
+                    android:textColor="#1565C0"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:letterSpacing="0.12" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Retrieve data from a remote server using an HTTP GET request."
+                    android:textSize="14sp"
+                    android:textColor="#64748B"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="GET  /posts/1"
+                    android:textColor="#1565C0"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:padding="12dp"
+                    android:background="#EAF3FF"
+                    android:layout_marginTop="14dp" />
+
+                <Button
+                    android:id="@+id/btnFetch"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:text="FETCH DATA  →"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_fetch_button"
+                    android:backgroundTint="@null"
+                    android:elevation="2dp"
+                    android:layout_marginTop="18dp" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:indeterminate="true"
+                    android:visibility="gone"
+                    android:layout_marginTop="14dp"
+                    android:indeterminateTint="#1976D2" />
+
+            </LinearLayout>
+
+            <!-- Response Heading -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="26dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Server Response"
+                    android:textColor="#172B4D"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="● READY"
+                    android:textColor="#64748B"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:padding="8dp"
+                    android:background="#E8EDF5" />
+
+            </LinearLayout>
+
+            <!-- Response Details Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp"
+                android:background="@drawable/bg_card"
+                android:elevation="2dp">
+
+                <!-- ID Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:background="#EAF3FF">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="POST ID"
+                            android:textSize="11sp"
+                            android:textColor="#64748B"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvPostId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="--"
+                            android:textSize="25sp"
+                            android:textColor="#1565C0"
+                            android:textStyle="bold"
+                            android:layout_marginTop="5dp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="1dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="12dp"
+                        android:background="#E8F5E9">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="USER ID"
+                            android:textSize="11sp"
+                            android:textColor="#64748B"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvUserId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="--"
+                            android:textSize="25sp"
+                            android:textColor="#2E7D32"
+                            android:textStyle="bold"
+                            android:layout_marginTop="5dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Title -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TITLE"
+                    android:textColor="#64748B"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="22dp" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your fetched title will appear here."
+                    android:textColor="#172B4D"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:lineSpacingExtra="4dp"
+                    android:layout_marginTop="8dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E7EDF5"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="18dp" />
+
+                <!-- Body -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="RESPONSE BODY"
+                    android:textColor="#64748B"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Click Fetch Data to retrieve the response from the server."
+                    android:textColor="#475569"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="5dp"
+                    android:layout_marginTop="8dp" />
+
+            </LinearLayout>
+
+            <!-- Footer -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Powered by JSONPlaceholder API"
+                android:textColor="#94A3B8"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_marginTop="22dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
